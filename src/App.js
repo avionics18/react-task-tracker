@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
@@ -13,22 +13,22 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   // Add Task
-  const addTask = task => {
+  const addTask = (task) => {
     const id = Math.floor(Math.random() * 10000) + 1;
     const newTask = { id, ...task };
     setTasks([...tasks, newTask]);
   };
 
   // Delete Task
-  const delTask = id => {
+  const delTask = (id) => {
     // alert("Obejct deleted! "+ id);
-    setTasks(tasks.filter(task => task.id !== id));
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
   // ToggleReminder
-  const toggleReminder = id => {
+  const toggleReminder = (id) => {
     setTasks(
-      tasks.map(task =>
+      tasks.map((task) =>
         task.id == id ? { ...task, reminder: !task.reminder } : task
       )
     );
@@ -47,18 +47,22 @@ const App = () => {
               />
               {/* Card Body */}
               <div className="card-body">
-                <Route path="/" exact render={(props)=>(
-                  <React.Fragment>
-                    {/* Form Component */}
-                    {showAddTask && <AddTask addTask={addTask} />}
-                    {/* Tasks Component */}
-                    <Tasks
-                      tasks={tasks}
-                      delTask={delTask}
-                      toggleRem={toggleReminder}
-                    />
-                  </React.Fragment>
-                )} />
+                <Route
+                  path="/"
+                  exact
+                  render={(props) => (
+                    <React.Fragment>
+                      {/* Form Component */}
+                      {showAddTask && <AddTask addTask={addTask} />}
+                      {/* Tasks Component */}
+                      <Tasks
+                        tasks={tasks}
+                        delTask={delTask}
+                        toggleRem={toggleReminder}
+                      />
+                    </React.Fragment>
+                  )}
+                />
                 {/* About Page */}
                 <Route path="/about" component={About} />
               </div>

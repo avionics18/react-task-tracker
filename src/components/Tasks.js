@@ -6,15 +6,22 @@ const Tasks = ({ tasks, delTask, toggleRem }) => {
   if (tasks.length == 0) {
     return (
       <div className="task-list">
-        <p className="text-secondary m-0">No tasks here!!! Click on <b>+ Add Task</b> to add one.</p>
+        <p className="text-secondary m-0">
+          No tasks here!!! Click on <b>+ Add Task</b> to add one.
+        </p>
       </div>
     );
   }
 
   return (
     <div className="task-list">
-      {tasks.map(item => (
-        <Task key={item.id} task={item} delTask={delTask} toggleRem={toggleRem} />
+      {tasks.map((item) => (
+        <Task
+          key={item.id}
+          task={item}
+          delTask={delTask}
+          toggleRem={toggleRem}
+        />
       ))}
     </div>
   );

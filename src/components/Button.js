@@ -9,7 +9,7 @@ const Button = ({ color, text, size, power }) => {
 };
 
 Button.defaultProps = {
-  text: "Button Component"
+  text: "Button Component",
 };
 
 export default Button;
