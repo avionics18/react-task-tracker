@@ -1,0 +1,25 @@
+body {
+  background-color: var(--dark) !important;
+}
+
+.task-list {
+  padding: 1.5rem 1.5rem;
+  background-color: #f4f4f4;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+  border-left: 6px solid var(--secondary);
+  margin-bottom: 1rem;
+}
+.task-list .task-item:last-child {
+  margin-bottom: 0;
+}
+.notification-on {
+  border-left-color: var(--success) !important;
+}
