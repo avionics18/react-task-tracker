@@ -2,7 +2,9 @@
 
 > A Simple Todo List App
 
-Live Link - [Click Here](#)
+Live Link - [Click Here](https://task-tracker.netlify.app)
+
+![screenshot](screenshot.png)
 
 ---
 
